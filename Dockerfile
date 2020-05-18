@@ -30,6 +30,8 @@ RUN apk --no-cache add openjdk11-jre && \
     firebase -V && \
     java -version && \
     chown -R node:node $HOME
+RUN RUN apt-get update && \
+      apt-get -y install sudo
 USER node
 VOLUME $HOME/.cache
 WORKDIR $HOME
